@@ -6,9 +6,26 @@ import java.util.Objects;
 
 public class Project {
 
+
     private Long id;
     private String name;
     private LocalDate dateCreated;
+
+
+    //Constructor
+    public Project(Long id, String name, LocalDate dateCreated) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.dateCreated = dateCreated;
+    }
+
+    //Constructor for our entity
+    public Project(Project project) {
+        //TODO Auto-generated constructor stub
+        this(project.getId(), project.getName(), project.getDateCreated());
+    }
+
 
 
     //Generate Getters and setters - reason the private variables cannot be accessed directly so they will have to invoke the getter and setter to read and update.
@@ -38,20 +55,29 @@ public class Project {
 
 
     //generate hashCode() and equals()
+    @Override
+    public int hashCode(){
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((dateCreated == null) ? 0 : dateCreated.hashCode());
+        result = prime * result + ((id == null) ? 0 : id.hashCode());
+        result = prime * result + ((name == null) ? 0 : name.hashCode());
+        return result;
+    }
 
     @Override
     public boolean equals(Object obj) {
         if (this == obj)
             return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
-        Project project = (Project) obj;
-        return Objects.equals(id, project.id) &&
-                Objects.equals(name, project.name) &&
-                Objects.equals(dateCreated, project.dateCreated);
+        if (obj == null )
+            return  false;
+        if (getClass() != obj.getClass())
+            return false;
+        Project other = (Project) obj;
+        return Objects.equals(id, other.id) &&
+                Objects.equals(name, other.name) &&
+                Objects.equals(dateCreated, other.dateCreated);
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, dateCreated);
-    }
+
 }
