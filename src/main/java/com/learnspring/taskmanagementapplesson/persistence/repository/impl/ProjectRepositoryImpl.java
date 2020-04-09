@@ -3,15 +3,23 @@ package com.learnspring.taskmanagementapplesson.persistence.repository.impl;
 
 import com.learnspring.taskmanagementapplesson.persistence.model.Project;
 import com.learnspring.taskmanagementapplesson.persistence.repository.IProjectRepository;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 import java.util.List;
 import java.util.ArrayList;
 
+@Repository
+//@Component /** Spring will scan for any classes annotated with @Component and will instantiate them as bean **/
 public class ProjectRepositoryImpl implements IProjectRepository {
 
 
-    List<Project> projects = new ArrayList<>();
+    private List<Project> projects = new ArrayList<>();
+
+    public ProjectRepositoryImpl(){
+        super();
+    }
 
     @Override
     public Optional<Project> findById(Long id) {

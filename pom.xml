@@ -18,6 +18,14 @@
 		<java.version>1.8</java.version>
 	</properties>
 
+	<developers>
+		<developer>
+			<email>nuradinahmed2012@gmail.com</email>
+			<name>nuradin</name>
+			<url>https://github.com/NuradinAhmed</url>
+		</developer>
+	</developers>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

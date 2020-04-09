@@ -4,10 +4,11 @@ import com.learnspring.taskmanagementapplesson.persistence.model.Project;
 import com.learnspring.taskmanagementapplesson.persistence.repository.IProjectRepository;
 import com.learnspring.taskmanagementapplesson.service.IProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
-
+@Service
 //Here we're going to auto wire our repository and just delegate. Just to delegate operations.
 public class ProjectServiceImpl implements IProjectService {
 
