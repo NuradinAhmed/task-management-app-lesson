@@ -10,6 +10,7 @@ public class Project {
     private Long id;
     private String name;
     private LocalDate dateCreated;
+    private String internalId;
 
 
     //Constructor
@@ -80,4 +81,11 @@ public class Project {
     }
 
 
+    public void setInternalId(String internalId) {
+        this.name = internalId;
+    }
+
+    public String getInternalId() {
+        return name;
+    }
 }
